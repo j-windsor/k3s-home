@@ -6,4 +6,3 @@ resources:
 - apps.yaml
 - core.yaml
 - base.yaml
-- cluster-secrets.sops.yaml
