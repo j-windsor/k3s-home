@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmChart
+metadata:
+  name: godaddy-webhook
+  namespace: core
+spec:
+  interval: 5m0s
+  reconcileStrategy: ChartVersion
+  chart: ./deploy/helm
+  sourceRef:
+    name: godaddy-webhook
+    kind: GitRepository
+  version: '0.1.0'
