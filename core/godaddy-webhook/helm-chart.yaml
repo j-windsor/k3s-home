@@ -8,6 +8,7 @@ spec:
   reconcileStrategy: ChartVersion
   chart: ./deploy/helm
   sourceRef:
-    name: godaddy-webhook
     kind: GitRepository
+    name: godaddy-webhook
+    namespace: core
   version: '0.1.0'
