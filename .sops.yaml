@@ -1,0 +1,4 @@
+creation_rules:
+  - path_regex: .*\.sops\.ya?ml
+    encrypted_regex: ^(data|stringData)$
+    pgp: E1C112091AA75C8B2466F5F9B2DEF5BB0A09DD53

@@ -107,13 +107,13 @@ spec:
           hajimari.io/icon: "weather-sunset"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         hosts:
-          - host: "jay-start.windsorfamily.org"
+          - host: "jay-start.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
         tls:
           - hosts:
-              - "jay-start.windsorfamily.org"
+              - "jay-start.${SECRET_DOMAIN}"
             secretName: "hajimari-tls"
     resources:
       requests:
