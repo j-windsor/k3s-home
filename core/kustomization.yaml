@@ -5,4 +5,5 @@ resources:
   - traefik
   - charts
   - crds
+  - godaddy-webhook
   - core-namespace.yaml
