@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: godaddy-webhook
+  namespace: core
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: ./deploy/helm
+      version: 0.1.0
+      sourceRef:
+        kind: GitRepository
+        name: godaddy-webhook
+        namespace: core
+      interval: 5m
+  dependsOn:
+    - name: cert-manager
+      namespace: core
+  values:
+    groupName: benny.${SECRET_DOMAIN}
+    certManager:
+      namespace: core
+      serviceAccountName: cert-manager
