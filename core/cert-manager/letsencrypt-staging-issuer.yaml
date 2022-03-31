@@ -5,7 +5,7 @@ metadata:
 spec:
   acme:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
-    email: ${SECRET_EMAIL}
+    email: '${SECRET_EMAIL}'
     privateKeySecretRef:
       name: letsencrypt-staging
     solvers:
@@ -14,7 +14,7 @@ spec:
         - '*.${SECRET_DOMAIN}'
       dns01:
         cloudDNS:
-          project: ${SECRET_GCP_PROJECTID}
+          project: '${SECRET_GCP_PROJECTID}'
           serviceAccountSecretRef:
             name: gcloud-dns-key
             key: key.json
