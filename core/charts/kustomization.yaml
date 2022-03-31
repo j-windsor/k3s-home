@@ -4,4 +4,3 @@ resources:
   - jetstack.yaml
   - traefik.yaml
   - hajimari.yaml
-  - godaddy-webhook.yaml
