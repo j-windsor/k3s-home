@@ -11,7 +11,7 @@ spec:
     solvers:
     - selector:
         dnsNames:
-        - '${SECRET_DOMAIN}'
+        - '*.${SECRET_DOMAIN}'
       dns01:
         cloudDNS:
           project: '${SECRET_GCP_PROJECTID}'
