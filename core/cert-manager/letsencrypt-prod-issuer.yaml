@@ -10,8 +10,8 @@ spec:
       name: letsencrypt-prod
     solvers:
     - selector:
-        dnsNames:
-        - '*.${SECRET_DOMAIN}'
+        dnsZones:
+        - '${SECRET_DOMAIN}'
       dns01:
         cloudDNS:
           project: '${SECRET_GCP_PROJECTID}'
