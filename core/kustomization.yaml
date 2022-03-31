@@ -6,4 +6,5 @@ resources:
   - charts
   - crds
   - secrets
+  - longhorn
   - core-namespace.yaml
