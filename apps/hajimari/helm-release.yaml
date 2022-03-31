@@ -113,7 +113,7 @@ spec:
                 pathType: Prefix
         tls:
           - hosts:
-              - "*.${SECRET_DOMAIN}"
+              - "jay-start.${SECRET_DOMAIN}"
             secretName: "hajimari-tls"
     resources:
       requests:
