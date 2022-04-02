@@ -22,10 +22,34 @@ spec:
       pullPolicy: IfNotPresent
 
     env:
-      DOMAIN: "https://vaultwarden.${SECRET_DOMAIN}"
-      DATA_FOLDER: "data"
+      DOMAIN: "https://bitwarden.${SECRET_DOMAIN}"
+      INVITATIONS_ALLOWED: "true"
       SIGNUPS_ALLOWED: "false"
+      SIGNUPS_DOMAINS_WHITELIST: "windsorfamily.org"
       WEBSOCKET_ENABLED: "true"
+      YUBICO_CLIENT_ID:
+        valueFrom:
+          secretKeyRef:
+            name: vaultwarden-secrets
+            key: YUBICO_CLIENT_ID
+      YUBICO_SECRET_KEY:
+        valueFrom:
+          secretKeyRef:
+            name: vaultwarden-secrets
+            key: YUBICO_SECRET_KEY
+      ADMIN_TOKEN:
+        valueFrom:
+          secretKeyRef:
+            name: vaultwarden-secrets
+            key: ADMIN_TOKEN
+
+    persistence:
+      config:
+        enabled: true
+        type: pvc
+        storageClass: longhorn
+        accessMode: ReadWriteOnce
+        size: 1Gi
 
     ingress:
       main:
@@ -34,7 +58,7 @@ spec:
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-prod"
           hajimari.io/enable: "true"
-          hajimari.io/icon: "weather-sunset"
+          hajimari.io/icon: "lock"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         hosts:
           - host: "bitwarden.${SECRET_DOMAIN}"
