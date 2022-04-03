@@ -34,12 +34,12 @@ spec:
       accessMode: ReadWriteOnce
       size: 500Gi
 
-    livenessProbe:
-      enabled: true
-    readinessProbe:
-      enabled: true
-    startupProbe:
-      enabled: false
+    # livenessProbe:
+    #   enabled: true
+    # readinessProbe:
+    #   enabled: true
+    # startupProbe:
+    #   enabled: false
 
     ingress:
       enabled: true
