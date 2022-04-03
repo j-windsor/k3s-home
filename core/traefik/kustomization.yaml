@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - helm-release.yaml
   - admin-basicauth-middleware.yaml
+  - admin-basicauth-secrets.sops.yaml
