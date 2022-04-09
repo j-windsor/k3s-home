@@ -7,4 +7,5 @@ resources:
   - crds
   - secrets
   - longhorn
+  - kubernetes-dashboard
   - core-namespace.yaml

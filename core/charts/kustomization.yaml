@@ -7,3 +7,4 @@ resources:
   - k8s-at-home.yaml
   - longhorn.yaml
   - nextcloud.yaml
+  - kubernetes-dashboard.yaml
