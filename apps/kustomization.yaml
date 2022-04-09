@@ -4,4 +4,5 @@ resources:
   - hajimari
   - vaultwarden
   - nextcloud
+  - protonmail-bridge
   - apps-namespace.yaml
