@@ -49,7 +49,7 @@ spec:
         hajimari.io/enable: "true"
         hajimari.io/icon: "lock"
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-        traefik.ingress.kubernetes.io/router.middlewares: apps-nextcloud-dav-redirect@kubernetescrd,nextcloud-hsts-header@kubernetescrd
+        traefik.ingress.kubernetes.io/router.middlewares: apps-nextcloud-dav-redirect@kubernetescrd,apps-nextcloud-hsts-header@kubernetescrd
       hosts:
         - host: "cloud.${SECRET_DOMAIN}"
           paths:
