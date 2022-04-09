@@ -1,0 +1,10 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: nextcloud-hsts-header
+  namespace: apps
+spec:
+  headers:
+    forceSTSHeader: true
+    stsIncludeSubdomains: true
+    stsSeconds: 15552000

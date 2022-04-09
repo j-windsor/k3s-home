@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
 - helm-release.yaml
 - secrets.sops.yaml
+- dav-redirect-middleware.yaml
+- hsts-header-middleware.yaml
