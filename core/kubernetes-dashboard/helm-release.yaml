@@ -17,6 +17,7 @@ spec:
     extraArgs:
       - --enable-skip-login
       - --enable-insecure-login
+    protocolHttp: true
     ingress:
       enabled: true
       ingressClassName: "traefik"
