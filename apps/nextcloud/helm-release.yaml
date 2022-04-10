@@ -21,16 +21,6 @@ spec:
       valuesKey: NEXTCLOUD_MARIADB_PASSWORD
       targetPath: mariadb.auth.password
       optional: false
-    - kind: Secret
-      name: protonmail-bridge-secrets
-      valuesKey: BRIDGE_USERNAME
-      targetPath: nextcloud.mail.smtp.name
-      optional: false
-    - kind: Secret
-      name: protonmail-bridge-secrets
-      valuesKey: BRIDGE_PASSWORD
-      targetPath: nextcloud.mail.smtp.password
-      optional: false
   values:
     image:
       repository: nextcloud
@@ -92,7 +82,17 @@ spec:
       - name: OVERWRITEPROTOCOL
         value: https 
       - name: PHP_MEMORY_LIMIT
-        value: 512M  
+        value: 512M
+      - name: SMTP_NAME
+        valueFrom:
+          secretKeyRef:
+            name: protonmail-bridge-secrets
+            key: BRIDGE_USERNAME
+      - name: SMTP_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: protonmail-bridge-secrets
+            key: BRIDGE_PASSWORD
 
     internalDatabase:
       enabled: false
