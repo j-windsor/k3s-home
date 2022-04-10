@@ -42,6 +42,21 @@ spec:
           secretKeyRef:
             name: vaultwarden-secrets
             key: ADMIN_TOKEN
+      SMTP_FROM_NAME: Vault
+      SMTP_FROM: noreply@windsorfamily.org
+      SMTP_HOST: protonmail-bridge.apps.svc.cluster.local
+      SMTP_USERNAME:
+        valueFrom:
+          secretKeyRef:
+            name: protonmail-bridge-secrets
+            key: BRIDGE_USERNAME
+      SMTP_PASSWORD:
+        valueFrom:
+          secretKeyRef:
+            name: protonmail-bridge-secrets
+            key: BRIDGE_PASSWORD
+      SMTP_PORT: 25
+      SMTP_SSL: "false"
 
     persistence:
       config:
