@@ -21,6 +21,16 @@ spec:
       valuesKey: NEXTCLOUD_MARIADB_PASSWORD
       targetPath: mariadb.auth.password
       optional: false
+    - kind: Secret
+      name: protonmail-bridge-secrets
+      valuesKey: BRIDGE_USERNAME
+      targetPath: nextcloud.mail.smtp.name
+      optional: false
+    - kind: Secret
+      name: protonmail-bridge-secrets
+      valuesKey: BRIDGE_PASSWORD
+      targetPath: nextcloud.mail.smtp.password
+      optional: false
   values:
     image:
       repository: nextcloud
@@ -67,9 +77,18 @@ spec:
         secretName: nextcloud-secrets
         usernameKey: NEXTCLOUD_ADMIN_USER
         passwordKey: NEXTCLOUD_ADMIN_PASSWORD
+      mail:
+        enabled: true
+        fromAddress: noreply
+        domain: windsorfamily.org
+        smtp:
+          host: protonmail-bridge.apps.svc.cluster.local
+          secure: ''
+          port: 25
+          authtype: LOGIN
       extraEnv:
       - name: VIRTUAL_HOST
-        value: cloud.windsor.family
+        value: "cloud.${SECRET_DOMAIN}"
       - name: OVERWRITEPROTOCOL
         value: https 
       - name: PHP_MEMORY_LIMIT
