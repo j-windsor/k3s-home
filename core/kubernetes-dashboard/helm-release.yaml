@@ -18,6 +18,8 @@ spec:
       - --enable-skip-login
       - --enable-insecure-login
     protocolHttp: true
+    service:
+      externalPort: 80
     ingress:
       enabled: true
       ingressClassName: "traefik"
