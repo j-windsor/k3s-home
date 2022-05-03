@@ -39,11 +39,10 @@ spec:
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt-prod"
       hosts:
-        - host: "collabora.cloud.${SECRET_DOMAIN}"
-          paths:
-            - path: /
-              pathType: Prefix
+      - "collabora.cloud.${SECRET_DOMAIN}"
+      paths:
+      - /
       tls:
         - hosts:
             - "collabora.cloud.${SECRET_DOMAIN}"
-          secretName: "nextcloud-tls"
+          secretName: "collabora-code-tls"
