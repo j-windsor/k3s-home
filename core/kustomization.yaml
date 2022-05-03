@@ -8,4 +8,5 @@ resources:
   - secrets
   - longhorn
   - kubernetes-dashboard
+  - external-dns
   - core-namespace.yaml

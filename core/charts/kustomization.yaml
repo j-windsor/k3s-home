@@ -8,3 +8,4 @@ resources:
   - longhorn.yaml
   - nextcloud.yaml
   - kubernetes-dashboard.yaml
+  - bitnami.yaml
