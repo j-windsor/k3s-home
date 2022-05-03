@@ -18,7 +18,9 @@ spec:
   values:
     provider: google
     google:
+      project: windsorfamily
       serviceAccountSecret: gcloud-dns-key
+      serviceAccountSecretKey: key.json
     policy: sync
     registry: txt
     txtOwnerId: benny-cluster
