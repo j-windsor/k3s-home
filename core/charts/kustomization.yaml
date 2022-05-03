@@ -9,3 +9,4 @@ resources:
   - nextcloud.yaml
   - kubernetes-dashboard.yaml
   - bitnami.yaml
+  - chrisingenhaag.yaml

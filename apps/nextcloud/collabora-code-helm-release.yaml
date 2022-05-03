@@ -1,0 +1,49 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: collabora-code
+  namespace: apps
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://chrisingenhaag.github.io/helm/
+      chart: collabora-code
+      version: 2.4.2
+      sourceRef:
+        kind: HelmRepository
+        name: chrisingenhaag-charts
+        namespace: core
+      interval: 5m
+  valuesFrom:
+    - kind: Secret
+      name: nextcloud-secrets
+      valuesKey: COLLABORA_CODE_USER
+      targetPath: collabora.username
+      optional: false
+    - kind: Secret
+      name: nextcloud-secrets
+      valuesKey: COLLABORA_CODE_PASSWORD
+      targetPath: collabora.password
+      optional: false
+  values:
+    collabora:
+      aliasgroups:
+      - domain: https://cloud.${SECRET_DOMAIN}:443
+      dictionaries: en_US
+      extra_params: --o:ssl.termination=true --o:ssl.enable=false
+      server_name: collabora\.cloud\.windsor\.family
+    ingress:
+      enabled: true
+      ingressClassName: "traefik"
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-prod"
+      hosts:
+        - host: "collabora.cloud.${SECRET_DOMAIN}"
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - hosts:
+            - "collabora.cloud.${SECRET_DOMAIN}"
+          secretName: "nextcloud-tls"
