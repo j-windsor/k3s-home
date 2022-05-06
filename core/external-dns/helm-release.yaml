@@ -27,7 +27,7 @@ spec:
     rbac:
       create: true
     extraArgs:
-      - --default-targets=windsorfamily.mynetgear.com
+      default-targets: windsorfamily.mynetgear.com
     domainFilters:
       - windsor.family
     sources:
