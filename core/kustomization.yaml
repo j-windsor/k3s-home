@@ -9,4 +9,5 @@ resources:
   - longhorn
   - kubernetes-dashboard
   - external-dns
+  - metallb
   - core-namespace.yaml

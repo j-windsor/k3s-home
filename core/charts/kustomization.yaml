@@ -10,3 +10,4 @@ resources:
   - kubernetes-dashboard.yaml
   - bitnami.yaml
   - chrisingenhaag.yaml
+  - metallb.yaml
