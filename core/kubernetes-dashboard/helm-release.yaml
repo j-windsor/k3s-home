@@ -27,6 +27,7 @@ spec:
         cert-manager.io/cluster-issuer: "letsencrypt-prod"
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         traefik.ingress.kubernetes.io/router.middlewares: "core-admin-basicauth@kubernetescrd"
+        external-dns.alpha.kubernetes.io/target: "windsorfamily.mynetgear.com"
       hosts:
         - "dashboard.cluster.${SECRET_DOMAIN}"
       tls:

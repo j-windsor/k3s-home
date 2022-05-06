@@ -38,6 +38,7 @@ spec:
       ingressClassName: "traefik"
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt-prod"
+        external-dns.alpha.kubernetes.io/target: "windsorfamily.mynetgear.com"
       hosts:
       - "collabora.cloud.${SECRET_DOMAIN}"
       paths:
