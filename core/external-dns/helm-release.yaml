@@ -24,6 +24,7 @@ spec:
     policy: sync
     registry: txt
     txtOwnerId: benny-cluster
+    txtPrefix: "k8s."
     rbac:
       create: true
     domainFilters:
