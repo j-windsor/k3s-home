@@ -82,10 +82,24 @@ spec:
       extraEnv:
       - name: VIRTUAL_HOST
         value: "cloud.${SECRET_DOMAIN}"
-      - name: OVERWRITEPROTOCOL
-        value: https 
       - name: PHP_MEMORY_LIMIT
         value: 512M  
+      configs:
+        proxy.config.php: |-
+          <?php
+          $CONFIG = array (
+            'trusted_proxies' => array('192.168.1.40')
+          );
+        protocol.config.php: |-
+          <?php
+          $CONFIG = array (
+            'overwriteprotocol' => 'https'
+          );
+        phone_region.config.php: |-
+          <?php
+          $CONFIG = array (
+            'default_phone_region' => 'US'
+          );
 
     internalDatabase:
       enabled: false
