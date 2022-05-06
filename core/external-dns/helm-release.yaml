@@ -26,6 +26,8 @@ spec:
     txtOwnerId: benny-cluster
     rbac:
       create: true
+    extraArgs:
+      - --default-targets=windsorfamily.mynetgear.com
     domainFilters:
       - windsor.family
     sources:
