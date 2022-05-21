@@ -125,15 +125,15 @@ spec:
       enabled: true
       architecture: standalone
 
+      image:
+        debug: true
+
       auth:
         username: nextcloud
         # password: set by valuesFrom
         database: nextcloud
 
       primary:
-        extraEnvVars:
-        - name: BITNAMI_DEBUG
-          value: "true"
         persistence:
           enabled: true
           storageClass: longhorn
