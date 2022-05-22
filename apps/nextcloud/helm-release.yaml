@@ -23,7 +23,7 @@ spec:
       optional: false
     - kind: Secret
       name: nextcloud-secrets
-      valuesKey: NEXTCLOUD_MARIADB_PASSWORD
+      valuesKey: NEXTCLOUD_MARIADB_ROOT_PASSWORD
       targetPath: mariadb.auth.rootPassword
       optional: false
   values:
