@@ -21,11 +21,11 @@ spec:
       valuesKey: NEXTCLOUD_MARIADB_PASSWORD
       targetPath: mariadb.auth.password
       optional: false
-    - kind: Secret
-      name: nextcloud-secrets
-      valuesKey: NEXTCLOUD_MARIADB_ROOT_PASSWORD
-      targetPath: mariadb.auth.rootPassword
-      optional: false
+    # - kind: Secret
+    #   name: nextcloud-secrets
+    #   valuesKey: NEXTCLOUD_MARIADB_ROOT_PASSWORD
+    #   targetPath: mariadb.auth.rootPassword
+    #   optional: false
   values:
     image:
       repository: nextcloud
@@ -136,7 +136,7 @@ spec:
       auth:
         username: nextcloud
         # password: set by valuesFrom
-        # rootPassword: set by valuesFrom
+        rootPassword: QbrMXOQ4cT
         database: nextcloud
 
       primary:
