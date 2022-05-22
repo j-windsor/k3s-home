@@ -136,7 +136,7 @@ spec:
       auth:
         username: nextcloud
         # password: set by valuesFrom
-        rootPassword: F1sKvwuAP0
+        rootPassword: 1hhKtzIhM3
         database: nextcloud
 
       primary:
