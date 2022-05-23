@@ -132,8 +132,8 @@ spec:
 
       image:
         debug: true
-      # diagnosticMode:
-      #   enabled: true
+      diagnosticMode:
+        enabled: true
 
       auth:
         username: nextcloud
