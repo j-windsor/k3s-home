@@ -133,7 +133,7 @@ spec:
       image:
         debug: true
       diagnosticMode:
-        enabled: true
+        enabled: false
 
       auth:
         username: nextcloud
