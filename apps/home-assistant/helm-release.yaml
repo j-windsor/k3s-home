@@ -17,7 +17,8 @@ spec:
       interval: 5m
   values:
     hostNetwork: true
-    
+    dnsPolicy: ClusterFirstWithHostNet
+
     persistence:
       config:
         enabled: true
