@@ -114,9 +114,10 @@ spec:
 
     redis:
       enabled: true
+      global:
+        storageClass: longhorn
 
       master:
-        storageClass: longhorn
         resources:
           requests:
             memory: 128Mi
@@ -124,7 +125,12 @@ spec:
             memory: 256Mi
 
       replica:
-        replicaCount: 0
+        replicaCount: 1
+        resources:
+          requests:
+            memory: 128Mi
+          limits:
+            memory: 256Mi
 
     mariadb:
       enabled: true
