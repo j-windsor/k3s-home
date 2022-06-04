@@ -16,10 +16,6 @@ spec:
         namespace: core
       interval: 5m
   values:
-    service:
-      type: LoadBalancer
-      externalTrafficPolicy: Local
-
     persistence:
       config:
         enabled: true
