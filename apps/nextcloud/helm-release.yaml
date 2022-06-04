@@ -114,17 +114,17 @@ spec:
 
     redis:
       enabled: true
-      global:
-        storageClass: longhorn
-
       master:
+        persistence:
+          storageClass: longhorn
         resources:
           requests:
             memory: 128Mi
           limits:
             memory: 256Mi
-
       replica:
+        persistence:
+          storageClass: longhorn
         replicaCount: 1
         resources:
           requests:
