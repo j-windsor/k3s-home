@@ -16,6 +16,8 @@ spec:
         namespace: core
       interval: 5m
   values:
+    hostNetwork: true
+    
     persistence:
       config:
         enabled: true
