@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - jetstack.yaml
   - traefik.yaml
-  - hajimari.yaml
   - k8s-at-home.yaml
   - longhorn.yaml
   - nextcloud.yaml
