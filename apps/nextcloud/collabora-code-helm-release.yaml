@@ -29,7 +29,7 @@ spec:
   values:
     collabora:
       aliasgroups:
-      - domain: https://cloud.${SECRET_DOMAIN}:443
+        - domain: https://cloud.${SECRET_DOMAIN}:443
       dictionaries: en_US
       extra_params: --o:ssl.termination=true --o:ssl.enable=false
       server_name: collabora\.cloud\.windsor\.family
@@ -41,9 +41,9 @@ spec:
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         external-dns.alpha.kubernetes.io/target: "windsorfamily.mynetgear.com"
       hosts:
-      - "collabora.cloud.${SECRET_DOMAIN}"
+        - "collabora.cloud.${SECRET_DOMAIN}"
       paths:
-      - /
+        - /
       tls:
         - hosts:
             - "collabora.cloud.${SECRET_DOMAIN}"

@@ -5,16 +5,16 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: '${SECRET_EMAIL}'
+    email: "${SECRET_EMAIL}"
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
-    - selector:
-        dnsZones:
-        - '${SECRET_DOMAIN}'
-      dns01:
-        cloudDNS:
-          project: '${SECRET_GCP_PROJECTID}'
-          serviceAccountSecretRef:
-            name: gcloud-dns-key
-            key: key.json
+      - selector:
+          dnsZones:
+            - "${SECRET_DOMAIN}"
+        dns01:
+          cloudDNS:
+            project: "${SECRET_GCP_PROJECTID}"
+            serviceAccountSecretRef:
+              name: gcloud-dns-key
+              key: key.json

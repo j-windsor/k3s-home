@@ -81,14 +81,14 @@ spec:
         domain: windsorfamily.org
         smtp:
           host: protonmail-bridge.apps.svc.cluster.local
-          secure: ''
+          secure: ""
           port: 25
           authtype: LOGIN
       extraEnv:
-      - name: VIRTUAL_HOST
-        value: "cloud.${SECRET_DOMAIN}"
-      - name: PHP_MEMORY_LIMIT
-        value: 512M  
+        - name: VIRTUAL_HOST
+          value: "cloud.${SECRET_DOMAIN}"
+        - name: PHP_MEMORY_LIMIT
+          value: 512M
       configs:
         proxy.config.php: |-
           <?php
