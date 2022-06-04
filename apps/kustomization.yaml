@@ -5,4 +5,5 @@ resources:
   - vaultwarden
   - nextcloud
   - protonmail-bridge
+  - home-assistant
   - apps-namespace.yaml
