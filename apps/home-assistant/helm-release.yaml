@@ -30,6 +30,8 @@ spec:
         accessMode: ReadWriteOnce
         size: 5Gi
 
+    hostNetwork: true
+    dnsPolicy: ClusterFirstWithHostNet
     service:
       main:
         type: LoadBalancer
