@@ -38,6 +38,10 @@ spec:
         ports:
           http:
             port: 8123
+          homekittcp:
+            enabled: true
+            port: 21063
+            targetPort: 21063
 
     ingress:
       main:
