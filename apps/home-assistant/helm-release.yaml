@@ -16,8 +16,11 @@ spec:
         namespace: core
       interval: 5m
   values:
-    hostNetwork: true
-    dnsPolicy: ClusterFirstWithHostNet
+    image:
+      repository: homeassistant/home-assistant
+      tag: 2022.6.2
+    env:
+      TZ: "America/Los_Angeles"
 
     persistence:
       config:
@@ -26,6 +29,32 @@ spec:
         storageClass: longhorn
         accessMode: ReadWriteOnce
         size: 5Gi
+
+    service:
+      main:
+        type: LoadBalancer
+        annotations:
+          metallb.universe.tf/allow-shared-ip: home-assistant-sharedip
+        ports:
+          http:
+            port: 8123
+          homekittcp:
+            enabled: true
+            port: 21063
+            targetPort: 21063
+      otherudp:
+        enabled: true
+        primary: false
+        name: home-assistant-udp
+        annotations:
+          metallb.universe.tf/allow-shared-ip: home-assistant-sharedip
+        type: LoadBalancer
+        ports:
+          homekitudp:
+            enabled: true
+            port: 5353
+            targetPort: 5353
+            protocol: UDP
 
     ingress:
       main:
