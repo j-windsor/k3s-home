@@ -30,8 +30,8 @@ spec:
         accessMode: ReadWriteOnce
         size: 5Gi
 
-    hostNetwork: true
-    dnsPolicy: ClusterFirstWithHostNet
+    # hostNetwork: true
+    # dnsPolicy: ClusterFirstWithHostNet
 
     ingress:
       main:
