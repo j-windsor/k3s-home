@@ -7,6 +7,7 @@ spec:
   interval: 5m
   chart:
     spec:
+      # renovate: registryUrl=https://charts.longhorn.io
       chart: longhorn
       version: v1.2.4
       sourceRef:
