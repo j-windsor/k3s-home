@@ -32,31 +32,6 @@ spec:
 
     hostNetwork: true
     dnsPolicy: ClusterFirstWithHostNet
-    service:
-      main:
-        type: LoadBalancer
-        annotations:
-          metallb.universe.tf/allow-shared-ip: home-assistant-sharedip
-        ports:
-          http:
-            port: 8123
-          homekittcp:
-            enabled: true
-            port: 21063
-            targetPort: 21063
-      otherudp:
-        enabled: true
-        primary: false
-        name: home-assistant-udp
-        annotations:
-          metallb.universe.tf/allow-shared-ip: home-assistant-sharedip
-        type: LoadBalancer
-        ports:
-          homekitudp:
-            enabled: true
-            port: 5353
-            targetPort: 5353
-            protocol: UDP
 
     ingress:
       main:
