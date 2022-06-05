@@ -30,6 +30,15 @@ spec:
         accessMode: ReadWriteOnce
         size: 5Gi
 
+    service:
+      main:
+        type: LoadBalancer
+        annotations:
+          metallb.universe.tf/allow-shared-ip: home-assistant-sharedip
+        ports:
+          http:
+            port: 8123
+
     ingress:
       main:
         enabled: true
