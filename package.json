@@ -12,9 +12,9 @@
   "author": "j-windsor",
   "homepage": "https://github.com/j-windsor/k3s-home#readme",
   "devDependencies": {
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.0",
-    "prettier": "^2.6.2"
+    "husky": "8.0.1",
+    "lint-staged": "13.0.0",
+    "prettier": "2.6.2"
   },
   "lint-staged": {
     "*.{yaml,md}": "prettier --write"
