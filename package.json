@@ -12,7 +12,7 @@
   "author": "j-windsor",
   "homepage": "https://github.com/j-windsor/k3s-home#readme",
   "devDependencies": {
-    "husky": "8.0.1",
+    "husky": "8.0.2",
     "lint-staged": "13.1.0",
     "prettier": "2.8.1"
   },
