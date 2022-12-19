@@ -10,3 +10,4 @@ resources:
   - bitnami.yaml
   - chrisingenhaag.yaml
   - metallb.yaml
+  - mailu.yaml
