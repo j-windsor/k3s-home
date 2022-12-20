@@ -31,10 +31,10 @@ spec:
     # subnet: "${CLUSTER_CIDR}"
     logLevel: INFO
     ingress:
-      annotations:
-        cert-manager.io/cluster-issuer: "letsencrypt-prod"
-        traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-        # external-dns.alpha.kubernetes.io/target: "windsorfamily.mynetgear.com"
+      # annotations:
+      #   cert-manager.io/cluster-issuer: "letsencrypt-prod"
+      #   traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+      #   external-dns.alpha.kubernetes.io/target: "windsorfamily.mynetgear.com"
       hosts:
         - "mail.${SECRET_DOMAIN}"
       tls:
