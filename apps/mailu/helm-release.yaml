@@ -26,8 +26,8 @@ spec:
     initialAccount:
       domain: "${SECRET_DOMAIN}"
       username: postmaster
-      password: "abc123"
-    secretKey: "abc123"
+      password: "${SECRET_MAILU_POSTMASTER_PASSWORD}"
+    secretKey: abc123
     # subnet: "${CLUSTER_CIDR}"
     logLevel: INFO
     ingress:
