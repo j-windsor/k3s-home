@@ -44,3 +44,13 @@ spec:
       storageClass: longhorn
       accessMode: ReadWriteOnce
       size: 50Gi
+    rspamd:
+      resources:
+        limits:
+          memory: 500Mi
+    roundcube:
+      resources:
+        requests:
+          cpu: 200m
+        limits:
+          cpu: 400m
