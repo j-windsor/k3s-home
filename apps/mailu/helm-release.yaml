@@ -49,8 +49,4 @@ spec:
         limits:
           memory: 500Mi
     roundcube:
-      resources:
-        requests:
-          cpu: 200m
-        limits:
-          cpu: 400m
+      enabled: false
