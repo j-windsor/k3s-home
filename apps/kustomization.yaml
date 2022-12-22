@@ -5,5 +5,4 @@ resources:
   - nextcloud
   - protonmail-bridge
   - home-assistant
-  - mailu
   - apps-namespace.yaml
